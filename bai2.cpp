@@ -1,26 +1,20 @@
 #include<iostream>
 
 using namespace std;
-int fibonaci(int);
+int giaiThua(int);
+int catalan(int)
 int main(){
-    int n = 10;
-    for(int i = 0;i < n;i++)
-    {
-        cout << fibonaci(i) << " ";
-    }
+
     return 0;
 }
 
-int fibonaci(int n)
+int giaiThua(int n)
 {
-    if(n < 0)
-    {
-        return -1;
-    } else if(n == 0 || n == 1)
-    {
+    if(n == 1)
         return 1;
-    }
-    else{
-        return fibonaci(n - 1) + fibonaci(n - 2);
-    }
+    return n * giaiThua(n - 1);
+}
+int catalan(int n)
+{
+    return giaiThua(2 * n) / giaiThua(n + 1) * giaiThua(n);
 }
